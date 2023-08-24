@@ -1,6 +1,14 @@
+/** Box element with remove button (calls removeBox in BoxList)
+ *
+ * Props: { id, backgroundColor, width, height, removeBox }
+ *
+ * State: none
+ *
+ * BoxList > Box
+ */
+
 
 function Box({ id, backgroundColor, width, height, removeBox }) {
-  // display a div with a background color, width, and height based on props sent
 
   const style = {
     width: `${width}px`,

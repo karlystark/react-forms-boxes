@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 
-
+/** New Box Form
+ *
+ * Props: addBox is passed from BoxList, adds box to state
+ *
+ * State: formData { height, width, backgroundColor }
+ *
+ * BoxList > NewBoxForm
+ */
 function NewBoxForm({ addBox }) {
 
   const initialState = {
@@ -57,8 +64,3 @@ function NewBoxForm({ addBox }) {
 
 export default NewBoxForm;
 
-// render a form
-// when submitted creates a new Box
-// form will have inputs for height, width, backgroundColor
-// these will get sent with the form submit
-// be sure to clear the input values on submit

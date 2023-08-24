@@ -1,8 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import BoxList from './BoxList';
-import NewBoxForm from './NewBoxForm';
 
+/** Renders BoxList
+ *
+ * Props: none
+ *
+ * State: none
+ *
+ * App > BoxList
+ */
 function App() {
   return (
     <div className="App">

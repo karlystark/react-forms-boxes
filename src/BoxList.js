@@ -3,10 +3,20 @@ import Box from './Box';
 import NewBoxForm from './NewBoxForm';
 import { v4 as uuid } from 'uuid';
 
+
+/** Renders list of boxes and NewBoxForm
+ *
+ * Props: none
+ *
+ * State: boxes (array of objects holding box data)
+ *
+ * BoxList > Box + NewBoxForm
+ */
 function BoxList() {
 
   const [boxes, setBoxes] = useState([]);
 
+  console.log("HERE ARE OUR BOXES ==> ", boxes);
 
   function addBox(formData) {
     //creates a new Box given the formData sent from newBoxForm
@@ -19,25 +29,23 @@ function BoxList() {
   }
 
   return (
-    <div>{boxes.map(box => <Box
-      key={box.id}
-      id={box.id}
-      height={box.height}
-      width={box.width}
-      backgroundColor={box.backgroundColor}
-      removeBox={removeBox}
-    />)}
+    <div>
+      {boxes.map(
+        ({id, height, width, backgroundColor}) =>
+          <Box
+            key={id}
+            id={id}
+            height={height}
+            width={width}
+            backgroundColor={backgroundColor}
+            removeBox={removeBox}
+          />
+        )
+      }
       <NewBoxForm addBox={addBox} />
     </div>
 
   );
-  // state that contains all of the boxes
-  // should render all of the box components (pass in backgroundColor, width, height)
-  // along with the NewBoxForm component
-  // with each box component, add a button with the text "X" next to each Box.
-  // when "X" is clicked, remove that specific box
-  // pass the "remove" function down to Box as props (button will be included in Box component)
-
 }
 
 export default BoxList;
