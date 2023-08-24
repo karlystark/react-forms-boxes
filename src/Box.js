@@ -15,6 +15,7 @@ function Box({ id, backgroundColor, width, height, removeBox }) {
     height: `${height}px`,
     backgroundColor: backgroundColor
   };
+
   return (
     <div>
       <div style={style}>
